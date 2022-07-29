@@ -1,0 +1,22 @@
+.full-width {
+  width: 100%;
+}
+.login-div {
+  margin-top: 50px;
+}
+.login {
+  padding: 30px;
+  border-radius: 10px;
+  /* background-color: antiquewhite; */
+  -webkit-box-shadow: 11px 10px 33px -11px rgba(24, 170, 186, 1);
+  -moz-box-shadow: 11px 10px 33px -11px rgba(24, 170, 186, 1);
+  box-shadow: 11px 10px 33px -11px rgba(24, 170, 186, 1);
+}
+.navbar-brand {
+  font-size: 50px;
+  font-family: "Hind ", cursive;
+}
+.logo {
+  text-decoration: none;
+  color: black;
+}

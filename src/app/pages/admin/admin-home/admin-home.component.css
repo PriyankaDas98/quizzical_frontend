@@ -1,0 +1,19 @@
+.card {
+  border-radius: 15px;
+  padding: 4px;
+}
+.msg {
+  font-family: Lato;
+  margin: 20px;
+  color: darkslategray;
+}
+img {
+  height: 50%;
+  width: 50%;
+  align-items: center;
+}
+.row {
+  text-align: center;
+  margin-left: 40px;
+  margin-top: 40px;
+}

@@ -1,0 +1,53 @@
+<mat-toolbar class="tool-bar">
+  <a
+    href=""
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+  </a>
+  <span class="logo">Quizzical</span>
+  <span class="example-spacer"></span>
+
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    Login
+  </a>
+
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Register
+  </a>
+  <!-- for logout -->
+  <a
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Logout
+  </a>
+
+  <!-- diaplying details of login -->
+  <a
+    *ngIf="isLoggedIn && user"
+    class="example-icon favorite-icon"
+    mat-button
+    routerLink="/user-dashboard/profile"
+    aria-label="Example icon-button with heart icon"
+  >
+    {{ login.getUser().username }}
+  </a>
+</mat-toolbar>

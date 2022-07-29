@@ -1,0 +1,152 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" href="#">Quizzical</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
+      <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+<div class="signup-div">
+  <div class="container">
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 signup">
+        <div class="text-center container">
+          <img
+            src="../../../assets/logo.jpg"
+            style="height: 100px; width: 100px"
+            alt="Logo"
+          />
+        </div>
+        <h1 class="text-center">SIGN UP</h1>
+
+        <form class="form" (ngSubmit)="formSubmit()">
+          <!-- username field -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Username</mat-label>
+            <input
+              required
+              [(ngModel)]="user.username"
+              name="userName"
+              matInput
+              placeholder="Username"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Username must be unique</mat-hint> -->
+          </mat-form-field>
+
+          <!-- password -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Password</mat-label>
+            <input
+              required
+              [(ngModel)]="user.password"
+              name="password"
+              type="password"
+              matInput
+              placeholder="Password"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <!-- First name -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input
+              required
+              [(ngModel)]="user.firstname"
+              name="firstName"
+              matInput
+              placeholder="First Name"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <!-- last name -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input
+              required
+              [(ngModel)]="user.lastname"
+              name="lastName"
+              matInput
+              placeholder="Last Name"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <!-- email -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Email</mat-label>
+            <input
+              required
+              [(ngModel)]="user.email"
+              name="email"
+              type="email"
+              matInput
+              placeholder="Email"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <!-- Phone Number -->
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Phone Number</mat-label>
+            <input
+              required
+              [(ngModel)]="user.phone"
+              name="phone"
+              type="tel"
+              matInput
+              placeholder="Phone Number"
+            />
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+          <div class="container text-center">
+            <button
+              type="submit"
+              mat-raised-button
+              color="primary"
+              class="full-width"
+            >
+              Register
+            </button>
+            <!-- <button
+                mat-raised-button
+                color="accent"
+                style="margin-left: 20px"
+              >
+                Clear
+              </button> -->
+            <br />
+            Already a user? <a routerLink="/login">Sign in</a>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>

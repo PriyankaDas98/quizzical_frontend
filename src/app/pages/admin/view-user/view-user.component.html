@@ -1,0 +1,101 @@
+<!-- <div> -->
+<!-- <h1>{{ c.username }}</h1>
+  <h3>{{ c.email }}</h3> -->
+<!-- 
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">USERNAME</th>
+        <th scope="col">FISRT NAME</th>
+        <th scope="col">LAST NAME</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of user">
+        <td>{{ c.username }}</td>
+        <td>{{ c.firstname }}</td>
+        <td>{{ c.lastname }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<br /><br />
+
+<div class="search-div">
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input
+      matInput
+      [(ngModel)]="searchKey"
+      placeholder="Search"
+      autocomplete="off"
+      (keyup)="applyFilter()"
+    />
+    <button
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      *ngIf="searchKey"
+      (click)="onSearchClear()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<div class="mat-elevation-z8 table-div">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <!-- usermame Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+    <!-- firstname Column -->
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>First name</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstname }}</td>
+    </ng-container>
+
+    <!-- lastname Column -->
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Last name</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastname }}</td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Contact</th>
+      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <!-- <button mat-icon-button color="accent">
+          <mat-icon>edit</mat-icon>
+        </button> -->
+        <button (click)="deleteUser(row.id)" mat-icon-button color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageSize]="5"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,43 @@
+.desc {
+  margin-top: 20%;
+}
+.homeimg {
+  height: 100%;
+  width: 100%;
+}
+.navbar {
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.navbar-brand {
+  color: rgb(79, 73, 73);
+  font-size: 50px;
+  font-family: "Hind ", cursive;
+
+  /* font-family: 'Josefin Sans', sans-serif; */
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Lora', serif; */
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: "Mukta", sans-serif; */
+  /* font-family: 'Padauk', sans-serif; */
+  /* font-family: 'Poppins', sans-serif;  */
+}
+.heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: black;
+}
+.sub-head {
+  font-family: "Poppins", sans-serif;
+  line-height: 30px;
+  color: rgb(75, 70, 70);
+}
+.signup-btn {
+  background-color: rgb(115, 255, 0);
+}
+.login-btn {
+  background-color: rgb(93, 150, 201);
+}

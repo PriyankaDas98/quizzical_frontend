@@ -1,0 +1,14 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.logo {
+  font-size: 36px;
+  font-family: "Hind ", cursive;
+}
+/* a .mat-icon-button :future {
+  color: rgb(227, 17, 17);
+
+} */
+.tool-bar {
+  background-color: #65c18c;
+}
