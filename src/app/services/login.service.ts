@@ -20,7 +20,7 @@ export class LoginService {
 
   //login user set token inside localstorage
   public loginUser(token: any) {
-    //in this way we store token from retun value from backend
+    //this way we store token from retun value from backend
     localStorage.setItem('token', token);
     return true;
   }

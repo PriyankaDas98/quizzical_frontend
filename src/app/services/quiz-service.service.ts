@@ -41,4 +41,8 @@ export class QuizServiceService {
   public getActiveQuizzesOfCategory(cid: any) {
     return this._http.get(`${baseUrl}/quiz/category/active/${cid}`);
   }
+  //get users who attempted that quiz
+  public getUsersByQuiz(qid: any) {
+    return this._http.get(`${baseUrl}/result/getUsers/${qid}`);
+  }
 }

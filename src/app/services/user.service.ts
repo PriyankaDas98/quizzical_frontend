@@ -28,4 +28,9 @@ export class UserService {
   public updateUser(user: any) {
     return this._http.put(`${baseUrl}/user/updateUser`, user);
   }
+
+  //get attempts and results
+  public getResult(userId: any) {
+    return this._http.get(`${baseUrl}/result/${userId}`);
+  }
 }

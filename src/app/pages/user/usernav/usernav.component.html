@@ -29,15 +29,14 @@
   >
     Register
   </a>
-  <!-- for logout -->
+  <!-- result link -->
   <a
-    (click)="logout()"
-    *ngIf="isLoggedIn"
-    mat-icon-button
-    class="example-icon favorite-icon mr20 ml20"
+    class="example-icon favorite-icon"
+    mat-button
+    [routerLink]="'/user-dashboard/result/' + login.getUser().id"
     aria-label="Example icon-button with heart icon"
   >
-    Logout
+    All Attempts
   </a>
 
   <!-- diaplying details of login -->
@@ -49,5 +48,16 @@
     aria-label="Example icon-button with heart icon"
   >
     {{ login.getUser().username }}
+  </a>
+
+  <!-- for logout -->
+  <a
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Logout
   </a>
 </mat-toolbar>

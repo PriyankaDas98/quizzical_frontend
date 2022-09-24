@@ -1,0 +1,26 @@
+<div style="margin-top: 40px">
+  <h1>{{ result[0]["quiz"].title }} Quiz Participants</h1>
+  <h3 style="color: grey">
+    Category {{ result[0]["quiz"].category["title"] }}
+  </h3>
+  <h3 style="color: grey">Total Marks {{ result[0]["quiz"].maxMarks }}</h3>
+  <table style="margin-top: 40px" class="table table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">No.</th>
+        <th scope="col">Username</th>
+        <th scope="col">Name</th>
+
+        <th scope="col">Marks Obtained</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let res of result; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ res["user"].username }}</td>
+        <td>{{ res["user"].firstname + " " + res["user"].lastname }}</td>
+        <td>{{ res.marksGot }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

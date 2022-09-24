@@ -11,6 +11,7 @@ export class UsernavComponent implements OnInit {
   isLoggedIn = false;
   user = null;
   curuser = null;
+  userId = null;
   constructor(public login: LoginService, private router: Router) {}
 
   ngOnInit(): void {

@@ -1,0 +1,25 @@
+<div style="margin-top: 40px">
+  <h1>Result of All Quiz Attempts</h1>
+  <table style="margin-top: 40px" class="table table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">No.</th>
+        <th scope="col">Quiz Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Marks Obtained</th>
+        <th scope="col">Attempted Questions</th>
+        <th scope="col">Correct Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let res of result; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ res["quiz"].title }}</td>
+        <td>{{ res["quiz"]["category"].title }}</td>
+        <td>{{ res.marksGot }}</td>
+        <td>{{ res.attempted }}</td>
+        <td>{{ res.correctAnswers }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -12,10 +12,10 @@
         </div>
         <div class="card-body">
           <h2 class="card-title">USERS</h2>
-          <h3 class="card-text">
-            Total Users <b>{{ user.length }}</b
+          <!-- <h3 class="card-text">
+            Total Users <b *ngIf="user != undefined">{{ user.length }}</b
             >.
-          </h3>
+          </h3> -->
           <button
             type="button"
             routerLink="/admin/view-user"
@@ -37,9 +37,9 @@
         </div>
         <div class="card-body">
           <h2 class="card-title">CATEGORIES</h2>
-          <h3 class="card-text">
+          <!-- <h3 class="card-text">
             Total Categories <b>{{ categories.length }}</b>
-          </h3>
+          </h3> -->
           <button
             routerLink="/admin/categories"
             type="button"
@@ -62,9 +62,9 @@
 
         <div class="card-body">
           <h2 class="card-title">QUIZZES</h2>
-          <h3 class="card-text">
+          <!-- <h3 class="card-text">
             Total Quizzes <b>{{ quizzes.length }}</b>
-          </h3>
+          </h3> -->
 
           <button
             routerLink="/admin/quizzes"

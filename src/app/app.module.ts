@@ -52,6 +52,9 @@ import { UserProfileComponent } from './pages/user/user-profile/user-profile.com
 import { UsernavComponent } from './pages/user/usernav/usernav.component';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { AttemptComponent } from './pages/user/attempt/attempt.component';
+import { ViewParticipantsComponent } from './pages/admin/view-participants/view-participants.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +84,8 @@ import { UpdateQuestionComponent } from './pages/admin/update-question/update-qu
     UsernavComponent,
     UpdateCategoryComponent,
     UpdateQuestionComponent,
+    AttemptComponent,
+    ViewParticipantsComponent,
   ],
   imports: [
     BrowserModule,

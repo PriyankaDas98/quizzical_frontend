@@ -1,6 +1,7 @@
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
@@ -10,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./start.component.css'],
 })
 export class StartComponent implements OnInit {
+  user: any;
   qid: any;
   questions: any;
 
@@ -24,7 +26,8 @@ export class StartComponent implements OnInit {
   constructor(
     private locationSt: LocationStrategy,
     private _route: ActivatedRoute,
-    private _question: QuestionService
+    private _question: QuestionService,
+    private login: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class StartComponent implements OnInit {
     this.qid = this._route.snapshot.params['qid'];
     console.log(this.qid);
     this.loadQuestions();
+    this.user = this.login.getUser();
   }
   loadQuestions() {
     this._question.getQuestionsOfQuizForTest(this.qid).subscribe(
@@ -96,7 +100,9 @@ export class StartComponent implements OnInit {
   evalQuiz() {
     //calculation
     // call to server to evaluate quiz
-    this._question.evalQuiz(this.questions).subscribe(
+    console.log(this.user.id);
+    const id = this.user.id;
+    this._question.evalQuiz(this.questions, id).subscribe(
       (data: any) => {
         console.log(data);
         this.isSubmit = true;
@@ -108,26 +114,6 @@ export class StartComponent implements OnInit {
         console.log(error);
       }
     );
-
-    //   this.questions.forEach((q: { givenAnswer: string; answer: any }) => {
-    //     if (q.givenAnswer == q.answer) {
-    //       this.correctAnswers++;
-    //       let marksSingle =
-    //         this.questions[0].quiz.maxMarks / this.questions.length;
-    //       this.marksGot += marksSingle;
-    //     }
-
-    //     if (q.givenAnswer.trim() != '') {
-    //       this.attempted++;
-    //     }
-    //   });
-
-    //   console.log('Correct Answers :' + this.correctAnswers);
-    //   console.log('Marks Got ' + this.marksGot);
-    //   console.log('attempted ' + this.attempted);
-
-    //   console.log(this.questions);
-    // }
   }
   printPage() {
     window.print();

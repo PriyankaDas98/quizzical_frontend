@@ -27,7 +27,10 @@ export class QuestionService {
   }
 
   // eval quiz
-  public evalQuiz(questions: any) {
-    return this._http.post(`${baseUrl}/question/eval-quiz`, questions);
+  public evalQuiz(questions: any, userId: any) {
+    return this._http.post(
+      `${baseUrl}/question/eval-quiz/${userId}`,
+      questions
+    );
   }
 }

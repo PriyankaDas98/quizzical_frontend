@@ -10,6 +10,7 @@ import { UpdateCategoryComponent } from './pages/admin/update-category/update-ca
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoryComponent } from './pages/admin/view-category/view-category.component';
+import { ViewParticipantsComponent } from './pages/admin/view-participants/view-participants.component';
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { ViewUserComponent } from './pages/admin/view-user/view-user.component';
@@ -17,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AttemptComponent } from './pages/user/attempt/attempt.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartComponent } from './pages/user/start/start.component';
@@ -97,6 +99,10 @@ const routes: Routes = [
         path: 'update-question/:qid',
         component: UpdateQuestionComponent,
       },
+      {
+        path: 'result/getUsers/:qid',
+        component: ViewParticipantsComponent,
+      },
     ],
   },
   {
@@ -116,6 +122,10 @@ const routes: Routes = [
       {
         path: 'instructions/:qid',
         component: InstructionsComponent,
+      },
+      {
+        path: 'result/:userId',
+        component: AttemptComponent,
       },
     ],
   },
